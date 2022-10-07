@@ -1,6 +1,6 @@
 import {Shape} from "./Shape";
-
-export class Circle extends Shape {
+import { Resizeable } from "./resize";
+export class Circle extends Shape implements Resizeable{
     radius: number;
 
     constructor(name: string, radius: number) {
@@ -14,5 +14,11 @@ export class Circle extends Shape {
 
     calculatePerimeter(): number {
         return Math.PI * this.radius * 2;
+    }
+    resize(percent): void {
+        this.radius *= 1 + percent/100;
+    }
+    toString(): string {
+        return `${super.show()} and I have a radius = ${this.radius} with Area = ${this.calculateArea()}`;
     }
 }

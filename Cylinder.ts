@@ -1,11 +1,11 @@
-import {Circle} from "./Circle";
+import { Circle } from "./Circle";
 
 export class Cylinder extends Circle {
     height: number;
 
     constructor(name: string,
-                radius: number,
-                height: number) {
+        radius: number,
+        height: number) {
         super(name, radius);
         this.height = height;
     }
